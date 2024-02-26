@@ -29,7 +29,7 @@ function formatEthString(value: ethers.BigNumberish) {
 // Function to get the balance of an Ethereum address
 async function getEthBalance(address: string): Promise<string | undefined> {
   try {
-    const url = `https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_KEY}`;
+    const url = `https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${process.env.ETHERSCAN_API_KEY}`;
     const response = await axios.get(url);
     if (response.data.status === "1") {
       // Get balance in Wei
@@ -48,7 +48,7 @@ async function getEthBalance(address: string): Promise<string | undefined> {
 }
 
 async function getTransactions(address: string): Promise<TransactionDetails[]> {
-  const url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_KEY}`;
+  const url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${process.env.ETHERSCAN_API_KEY}`;
 
   try {
     const response = await axios.get(url);

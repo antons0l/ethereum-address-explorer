@@ -7,7 +7,9 @@ First, install the dependencies:
 npm install
 ```
 
-Then, run the development server:
+Copy .env.local.example to .env.local and put the environment variables.
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -15,6 +17,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
 ## Deploy on Vercel
 
-This application is deployed on vercel -
+This application is deployed on vercel - https://ethereum-address-explorer-steel.vercel.app

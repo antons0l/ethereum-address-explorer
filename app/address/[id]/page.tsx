@@ -6,6 +6,7 @@ import axios from "axios";
 import Transactions from '../../../components/Transactions';
 import { TransactionDetails } from '../../api/eth/route';
 import Spinner from '../../../components/Spinner';
+import Overview from '../../../components/Overview';
 
 const EthAddrInfo = () => {
   const params = useParams();
@@ -23,12 +24,10 @@ const EthAddrInfo = () => {
 
 
   return (
-    <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20">
+    <section className="max-container padding-container flex flex-col pb-32 py-5">
       {isLoading ? <Spinner /> :
       <>
-        <div className="relative z-20 flex flex-1 flex-col items-center">
-          Balance {balance}
-        </div>
+        <Overview balance={balance}/>
         <Transactions transactions={transactions}/>
       </>
   }

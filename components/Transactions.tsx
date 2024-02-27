@@ -5,16 +5,15 @@ type TransactionsProps = {
   transactions: TransactionDetails[];
 }
 
+const COLUMN_NAMES = ["HASH", "BLOCK", "FROM", "TO", "VALUE"]
+
 const Transactions = ({transactions}: TransactionsProps) => {
   return (
-    <div className="flex flex-col overflow-x-auto">
+    <div className="flex flex-col overflow-x-auto bg-white rounded-lg shadow-md p-4 m-4">
+      <p className="bold-16 pb-5">Transactions</p>
       {/* Header */}
       <div className="flex mb-2">
-        <div className="w-1/5 px-4 py-2 font-bold">Transaction Hash</div>
-        <div className="w-1/5 px-4 py-2 font-bold">Block</div>
-        <div className="w-1/5 px-4 py-2 font-bold">From</div>
-        <div className="w-1/5 px-4 py-2 font-bold">To</div>
-        <div className="w-1/5 px-4 py-2 font-bold">Value</div>
+        {COLUMN_NAMES.map((columnName, index) => <div key={index} className="min-w-28 w-1/5 py-2 regular-14">{columnName}</div>)}
       </div>
       {/* Rows */}
       {transactions.map((transaction, index) => (

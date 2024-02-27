@@ -10,7 +10,7 @@ const Input = ({id, type, placeholder}: InputProps) => {
       id={id}
       type={type} 
       placeholder={placeholder} 
-      className="p-2 border border-gray-300 lg:rounded-l-md focus:outline-none min-w-96 " 
+      className="p-2 border border-gray-300 lg:rounded-l-md focus:outline-none min-w-80 sm:min-w-96" 
     />
   )
 }

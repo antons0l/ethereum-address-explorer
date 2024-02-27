@@ -48,7 +48,8 @@ async function getEthBalance(address: string): Promise<string | undefined> {
 }
 
 async function getTransactions(address: string): Promise<TransactionDetails[]> {
-  const url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${process.env.ETHERSCAN_API_KEY}`;
+  // For this task, it will fetch 50 recent transactions only (no pagination)
+  const url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&page=1&offset=50&apikey=${process.env.ETHERSCAN_API_KEY}`;
 
   try {
     const response = await axios.get(url);

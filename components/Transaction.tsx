@@ -1,4 +1,4 @@
-import { TransactionDetails } from "../app/api/eth/route"
+import { TransactionDetails } from "../app/api/eth/transactions/route"
 
 type TransactionProps = {
   transaction: TransactionDetails

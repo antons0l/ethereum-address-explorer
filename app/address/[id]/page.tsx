@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import Transactions from '../../../components/Transactions';
 import { TransactionDetails } from '../../api/eth/transactions/route';
-import Spinner from '../../../components/Spinner';
 import Overview from '../../../components/Overview';
 
 const EthAddrInfo = () => {
@@ -20,9 +19,6 @@ const EthAddrInfo = () => {
       if (res.data) setBalance(res.data);
       setIsBalanceLoading(false);
     });
-  }, [address])
-
-  useEffect(() => {
     axios.get(`/api/eth/transactions?address=${address}`).then(res => {
       setTransactions(res.data);
       setIsTrxLoading(false);
@@ -33,8 +29,8 @@ const EthAddrInfo = () => {
   return (
     <section className="max-container padding-container flex flex-col pb-32 py-5">
       <>
-        {isBalanceLoading ? <Spinner /> : <Overview balance={balance}/>}
-        {isTrxLoading ? <Spinner /> : <Transactions transactions={transactions}/>}
+        <Overview balance={balance} isLoading={isBalanceLoading}/>
+        <Transactions transactions={transactions} isLoading={isTrxLoading}/>
       </>
     </section>
   )

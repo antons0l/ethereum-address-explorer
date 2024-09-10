@@ -11,6 +11,12 @@ const EthAddrInfo = () => {
   return (
     <section className="max-container padding-container flex flex-col pb-32 py-5">
       <>
+        <section className="m-5 text flex gap-2">
+          <p className="font-bold">Address</p>
+          {address}
+        </section>
+        <section className="m-5 w-full border border-t-0 border-b-slate-200" />
+        
         <Overview address={address}/>
         <Transactions address={address}/>
       </>

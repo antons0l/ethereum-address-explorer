@@ -3,14 +3,6 @@ import axios from "axios";
 import { NextRequest } from "next/server";
 import { formatEthString } from "../../util/utils";
 
-export type TransactionDetails = {
-  hash: string;
-  blockNumber: string;
-  from: string;
-  to: string;
-  value: string;
-};
-
 export async function GET(request: NextRequest) {
   const address = request.nextUrl.searchParams.get("address") || "";
 

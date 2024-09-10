@@ -15,8 +15,7 @@ const EthAddrInfo = () => {
           <p className="font-bold">Address</p>
           {address}
         </section>
-        <section className="m-5 w-full border border-t-0 border-b-slate-200" />
-        
+
         <Overview address={address}/>
         <Transactions address={address}/>
       </>

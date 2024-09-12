@@ -1,6 +1,7 @@
 This is a [Next.js](https://nextjs.org/) app that implements an Ethereum address explorer. A user can put an ethereum address and get the current balance and recent transactions.
 
-<img width="794" alt="image" src="https://github.com/user-attachments/assets/cd55680a-c205-4461-b3c8-25d2eefbc1ea">
+<img width="727" alt="image" src="https://github.com/user-attachments/assets/1110ca2c-2570-457e-bed3-d1fe3d5b8453">
+
 
 ## Getting Started
 
